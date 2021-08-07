@@ -17,18 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Jetson Xavier NX | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jetson Xavier NX">
-<meta property="og:url" content="http://padroid.cn/Jetson-Xavier-NX/index.html">
+  <title>RTLinux入门篇 | Hexo</title>
+  <meta name="description" content="RTLinux （或称作实时Linux）是Linux中的一种实时操作系统。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为RTLinux Free（页面存档备份，存于互联网档案馆），以及一个来自FSMLabs的商业版本，称作RTLinux Pro（页面存档备份，存于互联网档案馆）。 RTLinux通过硬件和操作系统间的中断">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RTLinux入门篇">
+<meta property="og:url" content="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/index.html">
 <meta property="og:site_name" content="DROID">
+<meta property="og:description" content="RTLinux （或称作实时Linux）是Linux中的一种实时操作系统。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为RTLinux Free（页面存档备份，存于互联网档案馆），以及一个来自FSMLabs的商业版本，称作RTLinux Pro（页面存档备份，存于互联网档案馆）。 RTLinux通过硬件和操作系统间的中断">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-08-07T07:41:09.000Z">
-<meta property="article:modified_time" content="2021-08-07T07:41:09.914Z">
+<meta property="og:image" content="http://padroid.cn/2021/08/07/image/scheduling.jpg">
+<meta property="article:published_time" content="2021-08-07T08:09:15.000Z">
+<meta property="article:modified_time" content="2021-08-07T08:18:54.660Z">
 <meta property="article:author" content="mhming">
+<meta property="article:tag" content="嵌入式Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://padroid.cn/2021/08/07/image/scheduling.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://padroid.cn/Jetson-Xavier-NX/index.html">
+  <link rel="canonical" href="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/index.html">
   
     <link rel="alternate" href="/atom.xml" title="DROID" type="application/atom+xml">
   
@@ -213,18 +218,39 @@
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/TRLLinux/">TRLLinux</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag">嵌入式Linux</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" style="font-size: 13px;">嵌入式Linux</a>
+    </div>
+  </div>
+
     
       
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -236,6 +262,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/TRLLinux/">TRLLinux</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" class="title">RTLinux入门篇</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-07T08:09:15.000Z" itemprop="datePublished">2021-08-07</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -264,14 +305,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-RTLinux入门篇" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Jetson Xavier NX
+      RTLinux入门篇
     </h1>
   
 
@@ -279,22 +320,35 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/Jetson-Xavier-NX/index.html" class="article-date">
-	  <time datetime="2021-08-07T07:41:09.000Z" itemprop="datePublished">2021-08-07</time>
+	<a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" class="article-date">
+	  <time datetime="2021-08-07T08:09:15.000Z" itemprop="datePublished">2021-08-07</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/TRLLinux/">TRLLinux</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag">嵌入式Linux</a>
+  </span>
+
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/Jetson-Xavier-NX/index.html#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <p><img src="../image/scheduling.jpg" alt="scheduling"></p>
+<p><strong>RTLinux</strong> （或称作实时Linux）是<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-Linux">Linux</a>中的一种<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">实时操作系统</a>。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为<a target="_blank" rel="noopener" href="http://www.rtlinuxfree.com/">RTLinux Free</a>（<a target="_blank" rel="noopener" href="https://web.archive.org/web/20070227190823/http://www.rtlinuxfree.com/">页面存档备份</a>，存于<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E4%BA%92%E8%81%94%E7%BD%91%E6%A1%A3%E6%A1%88%E9%A6%86">互联网档案馆</a>），以及一个来自FSMLabs的商业版本，称作<a target="_blank" rel="noopener" href="http://www.fsmlabs.com/">RTLinux Pro</a>（<a target="_blank" rel="noopener" href="https://web.archive.org/web/20070114094543/http://www.fsmlabs.com/">页面存档备份</a>，存于<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E4%BA%92%E8%81%94%E7%BD%91%E6%A1%A3%E6%A1%88%E9%A6%86">互联网档案馆</a>）。</p>
+<p><strong>RTLinux</strong>通过硬件和操作系统间的中断控制来支持硬实时（确定性）操作。进行确定性处理所需要的中断由实时核心加工，其他中断被送往非实时操作系统。操作系统运行为低优先级线程。先进先出管道（FIFOs）或共享内存可以被用来在操作系统和实时核心之间共享数据。</p>
+
       
     </div>
     <div class="article-footer">
@@ -303,7 +357,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://padroid.cn/Jetson-Xavier-NX/index.html" title="Jetson Xavier NX" target="_blank" rel="external">http://padroid.cn/Jetson-Xavier-NX/index.html</a>
+      <a href="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" title="RTLinux入门篇" target="_blank" rel="external">http://padroid.cn/2021/08/07/RTLinux入门篇/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -346,6 +400,16 @@
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/08/07/readme/" title="(no title)"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
   
   <!-- Button trigger modal -->
@@ -465,6 +529,10 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+
+
+   
 
 
 
