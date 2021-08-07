@@ -17,25 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>RTLinux简介 | Hexo</title>
-  <meta name="description" content="RTLinux （或称作实时Linux）是Linux中的一种实时操作系统。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为RTLinux Free（页面存档备份，存于互联网档案馆），以及一个来自FSMLabs的商业版本，称作RTLinux Pro（页面存档备份，存于互联网档案馆）。 RTLinux通过硬件和操作系统间的中断">
+  <title>Preempt RT | Hexo</title>
+  <meta name="description" content="实时Linux内核（PREEMPT_RT）RTLinux官方简介PREEMPT_R通用平台安装方法： 实时Linux内核（PREEMPT_RT）的编译安装以及测试 PREEMPT_RT在NVIDIA开发套件(以JetsonNX为例)中的安装方法： Jetson Xavier NX 内核编译移植 官方安装指导： [如何使用 PREEMPT_RT 正确设置 Linux]](https:&#x2F;&#x2F;wiki.l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RTLinux简介">
-<meta property="og:url" content="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/index.html">
+<meta property="og:title" content="Preempt RT">
+<meta property="og:url" content="http://padroid.cn/2021/08/07/Preempt-RT/index.html">
 <meta property="og:site_name" content="DROID">
-<meta property="og:description" content="RTLinux （或称作实时Linux）是Linux中的一种实时操作系统。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为RTLinux Free（页面存档备份，存于互联网档案馆），以及一个来自FSMLabs的商业版本，称作RTLinux Pro（页面存档备份，存于互联网档案馆）。 RTLinux通过硬件和操作系统间的中断">
+<meta property="og:description" content="实时Linux内核（PREEMPT_RT）RTLinux官方简介PREEMPT_R通用平台安装方法： 实时Linux内核（PREEMPT_RT）的编译安装以及测试 PREEMPT_RT在NVIDIA开发套件(以JetsonNX为例)中的安装方法： Jetson Xavier NX 内核编译移植 官方安装指导： [如何使用 PREEMPT_RT 正确设置 Linux]](https:&#x2F;&#x2F;wiki.l">
 <meta property="og:locale">
-<meta property="og:image" content="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/scheduling.jpg">
-<meta property="og:image" content="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/GPLinuxOS.jpg">
-<meta property="og:image" content="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/RTLinuxOS.jpg">
-<meta property="article:published_time" content="2021-08-07T08:09:15.000Z">
-<meta property="article:modified_time" content="2021-08-07T11:22:10.331Z">
+<meta property="article:published_time" content="2021-08-07T11:25:25.000Z">
+<meta property="article:modified_time" content="2021-08-07T12:04:31.893Z">
 <meta property="article:author" content="mhming">
 <meta property="article:tag" content="嵌入式Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/scheduling.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/index.html">
+  <link rel="canonical" href="http://padroid.cn/2021/08/07/Preempt-RT/index.html">
   
     <link rel="alternate" href="/atom.xml" title="DROID" type="application/atom+xml">
   
@@ -307,14 +303,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-RTLinux入门篇" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Preempt-RT" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      RTLinux简介
+      Preempt RT
     </h1>
   
 
@@ -322,8 +318,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" class="article-date">
-	  <time datetime="2021-08-07T08:09:15.000Z" itemprop="datePublished">2021-08-07</time>
+	<a href="/2021/08/07/Preempt-RT/" class="article-date">
+	  <time datetime="2021-08-07T11:25:25.000Z" itemprop="datePublished">2021-08-07</time>
 	</a>
 </span>
         
@@ -341,33 +337,49 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/Preempt-RT/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/scheduling.jpg"></p>
-<p><strong>RTLinux</strong> （或称作实时Linux）是<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-Linux">Linux</a>中的一种<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">实时操作系统</a>。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为<a target="_blank" rel="noopener" href="http://www.rtlinuxfree.com/">RTLinux Free</a>（<a target="_blank" rel="noopener" href="https://web.archive.org/web/20070227190823/http://www.rtlinuxfree.com/">页面存档备份</a>，存于<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E4%BA%92%E8%81%94%E7%BD%91%E6%A1%A3%E6%A1%88%E9%A6%86">互联网档案馆</a>），以及一个来自FSMLabs的商业版本，称作<a target="_blank" rel="noopener" href="http://www.fsmlabs.com/">RTLinux Pro</a>（<a target="_blank" rel="noopener" href="https://web.archive.org/web/20070114094543/http://www.fsmlabs.com/">页面存档备份</a>，存于<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E4%BA%92%E8%81%94%E7%BD%91%E6%A1%A3%E6%A1%88%E9%A6%86">互联网档案馆</a>）。</p>
-<p><strong>RTLinux</strong>通过硬件和操作系统间的中断控制来支持硬实时（确定性）操作。进行确定性处理所需要的中断由实时核心加工，其他中断被送往非实时操作系统。操作系统运行为低优先级线程。先进先出管道（FIFOs）或共享内存可以被用来在操作系统和实时核心之间共享数据。</p>
-<p>图 1 显示了通用 Linux 系统的传统架构，其中内核直接与硬件交互。所有的中断都由内核自己拦截。</p>
-<p><img src="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/GPLinuxOS.jpg" alt="通用Linux操作系统"></p>
-<center style="color:#C0C0C0;text-decoration:underline">图1.GPLinuxOS.jpg</center>
-
-<p><img src="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/RTLinuxOS.jpg" alt="实时Linux系统"></p>
-<center style="color:#C0C0C0;text-decoration:underline">图2.RTLinuxOS.jpg</center>
-
-<p>图 2 描述了 RTLinux 系统的设计。图中显示了三个重要方面：</p>
-<ul>
-<li>RTLinux 位于真正的硬件和内核之间。</li>
-<li>它充当内核的硬件。</li>
-<li>它将内核视为一个单独的大进程。</li>
+        <h1 id="实时Linux内核（PREEMPT-RT）"><a href="#实时Linux内核（PREEMPT-RT）" class="headerlink" title="实时Linux内核（PREEMPT_RT）"></a>实时Linux内核（PREEMPT_RT）</h1><h1 id="RTLinux官方简介"><a href="#RTLinux官方简介" class="headerlink" title="RTLinux官方简介"></a><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/start">RTLinux官方简介</a></h1><p>PREEMPT_R通用平台安装方法：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/v6543210/article/details/80941906">实时Linux内核（PREEMPT_RT）的编译安装以及测试</a></p>
+<p>PREEMPT_RT在NVIDIA开发套件(以JetsonNX为例)中的安装方法：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b6f70b3ffe2">Jetson Xavier NX 内核编译移植</a></p>
+<p>官方安装指导：</p>
+<p>[如何使用 PREEMPT_RT 正确设置 Linux]](<a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/preemptrt_setup">https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/preemptrt_setup</a>)</p>
+<h2 id="实时操作系统配置"><a href="#实时操作系统配置" class="headerlink" title="实时操作系统配置"></a>实时操作系统配置</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/preemptrt_setup">如何使用 PREEMPT_RT 正确设置 Linux</a></li>
 </ul>
-<p>RT 调度程序在处理器上调度内核。内核的优先级比实时任务低，可以抢占。所有硬件中断都被 RTLinux 层拦截，如果不是针对 RT 任务，那么当 RTLinux 处于空闲状态时，中断会作为软件中断传递给 Linux 内核。</p>
-<p>因此，提供了两个功能：</p>
+<h2 id="RT应用开发"><a href="#RT应用开发" class="headerlink" title="RT应用开发"></a>RT应用开发</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/application_base">HOWTO 构建一个简单的 RT 应用程序</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/cyclic">HOWTO 使用循环任务构建一个简单的 RT 应用程序</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/locking">HOWTO 使用锁定机制构建一个简单的 RT 应用程序</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/signal">HOWTO 用信号机制构建一个简单的 RT 应用程序</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory">HOWTO 处理应用程序内存</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/cpuidle">HOWTO 在您的设计中包含 CPU 空闲电源管理</a></p>
+</li>
+</ul>
+<h3 id="内存锁定"><a href="#内存锁定" class="headerlink" title="内存锁定"></a>内存锁定</h3><p>看<a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory#memory_locking">这里</a></p>
+<h3 id="RT线程的堆栈"><a href="#RT线程的堆栈" class="headerlink" title="RT线程的堆栈"></a>RT线程的堆栈</h3><p>看<a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory#stack_memory_for_rt_threads">这里</a></p>
+<h2 id="调度-策略和优先级"><a href="#调度-策略和优先级" class="headerlink" title="调度 - 策略和优先级"></a>调度 - 策略和优先级</h2><p>根据所选任务策略和相关规则，调度程序决定换出哪个任务以及接下来处理哪个任务。Linux 内核实现了多种调度策略。它们分为非实时和实时策略。调度策略已经在主线 Linux 中实现。</p>
+<p><strong>非实时策略：</strong></p>
 <ul>
-<li>所有 RT 任务在需要资源时都会得到实时响应。</li>
-<li>当 RTLinux 系统空闲时，内核可以执行所有非 RT 任务。</li>
+<li><strong>SCHED_OTHER：</strong>每个任务都有一个所谓的“不错的价值”。它是一个介于 -20（最高 nice 值）和 19（最低 nice 值）之间的值。任务执行时间的平均值取决于相关的 nice 值。</li>
+<li><strong>SCHED_BATCH：</strong>此策略源自 SCHED_OTHER 并针对吞吐量进行了优化。</li>
+<li><strong>SCHED_IDLE：</strong>它也是从 SCHED_OTHER 派生的，但它的值比 19 弱。</li>
+</ul>
+<p><strong>实时政策：</strong></p>
+<ul>
+<li><strong>SCHED_FIFO：</strong>任务的优先级介于 1（低）和 99（高）之间。在此策略下运行的任务将被调度，直到它完成或更高优先级的任务抢占它。</li>
+<li><strong>SCHED_RR：</strong>此策略源自 SCHED_FIFO。与 SCHED_FIFO 的区别在于任务在定义的时间片的持续时间内运行（如果它没有被更高优先级的任务抢占）。一旦时间片用完，它可以被具有相同优先级的任务中断。时间片定义在 procfs (/proc/sys/kernel/sched_rr_timeslice_ms) 中导出。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://wiki.linuxfoundation.org/realtime/documentation/technical_basics/sched_policy_prio/sched_deadline">SCHED_DEADLINE</a>：</strong>此策略实施全球最早截止日期优先 (GEDF) 算法。在此策略下调度的任务可以抢占使用 SCHED_FIFO 或 SCHED_RR 调度的任何任务。</li>
 </ul>
 
       
@@ -378,7 +390,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" title="RTLinux简介" target="_blank" rel="external">http://padroid.cn/2021/08/07/RTLinux入门篇/</a>
+      <a href="http://padroid.cn/2021/08/07/Preempt-RT/" title="Preempt RT" target="_blank" rel="external">http://padroid.cn/2021/08/07/Preempt-RT/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -424,10 +436,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/08/07/Preempt-RT/" title="Preempt RT"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" title="RTLinux简介"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>
