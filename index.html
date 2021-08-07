@@ -243,7 +243,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -270,21 +270,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2021/08/07/readme/" class="title">(no title)</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-08-07T07:52:01.543Z" itemprop="datePublished">2021-08-07</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -297,67 +282,112 @@
   
   <main class="main" role="main">
   
-  <div class="content article-list">
+  
+    <div class="content">
+  <article id="post-RTLinux入门篇" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/">RTLinux入门篇</a>
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" class="article-date">
-	  <time datetime="2021-08-07T08:09:15.000Z" itemprop="datePublished">Aug 7</time>
+	  <time datetime="2021-08-07T08:09:15.000Z" itemprop="datePublished">2021-08-07</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/RTLinux/">RTLinux</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag">嵌入式Linux</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
+        
 
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p><img src="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/scheduling.jpg"></p>
+<p><strong>RTLinux</strong> （或称作实时Linux）是<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-Linux">Linux</a>中的一种<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">实时操作系统</a>。它由美国新墨西哥州立大学数据挖掘技术学院的V. Yodaiken开发。目前，RTLinux有一个由社区支持的免费版本，称为<a target="_blank" rel="noopener" href="http://www.rtlinuxfree.com/">RTLinux Free</a>（<a target="_blank" rel="noopener" href="https://web.archive.org/web/20070227190823/http://www.rtlinuxfree.com/">页面存档备份</a>，存于<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E4%BA%92%E8%81%94%E7%BD%91%E6%A1%A3%E6%A1%88%E9%A6%86">互联网档案馆</a>），以及一个来自FSMLabs的商业版本，称作<a target="_blank" rel="noopener" href="http://www.fsmlabs.com/">RTLinux Pro</a>（<a target="_blank" rel="noopener" href="https://web.archive.org/web/20070114094543/http://www.fsmlabs.com/">页面存档备份</a>，存于<a target="_blank" rel="noopener" href="https://www.wanweibaike.net/wiki-%E4%BA%92%E8%81%94%E7%BD%91%E6%A1%A3%E6%A1%88%E9%A6%86">互联网档案馆</a>）。</p>
+<p><strong>RTLinux</strong>通过硬件和操作系统间的中断控制来支持硬实时（确定性）操作。进行确定性处理所需要的中断由实时核心加工，其他中断被送往非实时操作系统。操作系统运行为低优先级线程。先进先出管道（FIFOs）或共享内存可以被用来在操作系统和实时核心之间共享数据。</p>
+<p>图 1 显示了通用 Linux 系统的传统架构，其中内核直接与硬件交互。所有的中断都由内核自己拦截。</p>
+<p><img src="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/GPLinuxOS.jpg" alt="通用Linux操作系统"></p>
+<center style="color:#C0C0C0;text-decoration:underline">图1.GPLinuxOS.jpg</center>
+
+<p><img src="/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/RTLinuxOS.jpg" alt="实时Linux系统"></p>
+<center style="color:#C0C0C0;text-decoration:underline">图2.RTLinuxOS.jpg</center>
+
+<p>图 2 描述了 RTLinux 系统的设计。图中显示了三个重要方面：</p>
+<ul>
+<li>RTLinux 位于真正的硬件和内核之间。</li>
+<li>它充当内核的硬件。</li>
+<li>它将内核视为一个单独的大进程。</li>
+</ul>
+<p>RT 调度程序在处理器上调度内核。内核的优先级比实时任务低，可以抢占。所有硬件中断都被 RTLinux 层拦截，如果不是针对 RT 任务，那么当 RTLinux 处于空闲状态时，中断会作为软件中断传递给 Linux 内核。</p>
+<p>因此，提供了两个功能：</p>
+<ul>
+<li>所有 RT 任务在需要资源时都会得到实时响应。</li>
+<li>当 RTLinux 系统空闲时，内核可以执行所有非 RT 任务。</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://padroid.cn/2021/08/07/RTLinux%E5%85%A5%E9%97%A8%E7%AF%87/" title="RTLinux入门篇" target="_blank" rel="external">http://padroid.cn/2021/08/07/RTLinux入门篇/</a>
+    </li>
     
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/mhming" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/mhming" target="_blank"><span class="text-dark">望江樵夫</span><small class="ml-1x">Robot R&amp;D</small></a></h3>
+        <div>Personal assistent droid R&amp;D</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/08/07/readme/" class="article-date">
-	  <time datetime="2021-08-07T07:52:01.543Z" itemprop="datePublished">Aug 7</time>
-	</a>
-</span>
-    
-    
+</div>
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/readme/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-  </div>
+  
 
    
 </main>
